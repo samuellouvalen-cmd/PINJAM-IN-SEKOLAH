@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinjam-In Pro v3</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-shell">
+        <div class="top-bar">
+            <div class="user-profile">
+                <div class="avatar">S</div>
+                <div class="welcome-text">
+                    <span>Database Sekolah</span>
+                    <strong>Pinjam-In Pro</strong>
+                </div>
+            </div>
+            <div style="font-size: 20px;">🔔</div>
+        </div>
+
+        <div id="homePage" class="main-content active-page">
+            <h2 class="page-title">Daftar Inventaris</h2>
+            <div id="itemList"></div>
+        </div>
+
+        <div id="historyPage" class="main-content">
+            <h2 class="page-title">Riwayat Pinjam</h2>
+            <div id="historyList">
+                <p style="text-align: center; color: #999; margin-top: 50px;">Belum ada riwayat.</p>
+            </div>
+        </div>
+
+        <div id="settingPage" class="main-content">
+            <h2 class="page-title">Pengaturan</h2>
+            <div class="setting-card" onclick="contactEmergency()">
+                <div class="icon-box">📞</div>
+                <div>
+                    <strong>Kontak Darurat</strong>
+                    <small style="display:block; color:#666;">WhatsApp: 0881026200987</small>
+                </div>
+            </div>
+        </div>
+
+        <nav class="bottom-nav">
+            <div class="nav-item active" onclick="switchPage('home', this)">🏠<span>Home</span></div>
+            <div class="nav-item" onclick="switchPage('history', this)">🕒<span>Riwayat</span></div>
+            <div class="nav-item" onclick="switchPage('setting', this)">⚙️<span>Setting</span></div>
+        </nav>
+    </div>
+
+    <div id="overlay" class="overlay" onclick="closeModal()"></div>
+    <div id="modal" class="modal">
+        <h3 id="mHeader" style="margin-top:0">Form Peminjaman</h3>
+        <div class="input-group"><label>Nama Lengkap</label><input type="text" id="bName"></div>
+        <div class="input-group"><label>Kelas</label><input type="text" id="bClass"></div>
+        <div class="input-group"><label>NIS</label><input type="number" id="bNis"></div>
+        <div class="input-group"><label>WhatsApp</label><input type="tel" id="bPhone"></div>
+        <button class="btn-confirm" onclick="confirmLoan()">Konfirmasi Pinjam</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
